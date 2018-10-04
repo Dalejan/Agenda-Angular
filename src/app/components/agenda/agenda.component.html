@@ -1,0 +1,12 @@
+<table id="table">
+  <tr>
+    <th *ngFor="let col of arrColumns">
+      {{col}}
+    </th>
+  </tr>
+
+  <tr *ngFor="let estudiante of arrEstudiantes; let i = index" app-estudiante [estudiante]="estudiante" [index]="i"
+    (evBorrar)='borrar($event)'>
+  </tr>
+
+</table>

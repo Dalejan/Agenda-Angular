@@ -1,0 +1,13 @@
+<!-- <td *ngFor="let col of columns; let i =index">
+  {{estudiante_ele[i]}}
+</td> -->
+
+<td> {{estudiante.strNombre}}</td>
+<td> {{estudiante.strCorreo}}</td>
+<td> {{estudiante.numCodigo}}</td>
+<td class="actions">
+  <div *ngFor="let action of arrActions" (click)="clicked(action)">
+    <img class="action-icon" [appActionIcon]="action" />
+  </div>
+
+</td>
