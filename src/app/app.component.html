@@ -1,3 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="header">{{title}}</div>
-<app-agenda [estudiantes]="estudiantes" (evBorrar)='borrar($event)'></app-agenda>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>{{strTitle}}</span>
+
+        <span class="spacer"></span>
+        <button mat-button color="accent" (click)="openModal('crear')" name="crear"> <img src="../assets/icons/add.svg"
+                alt="crear estudiante">
+        </button>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="content">
+    <mat-card>
+        <app-student-list [students]="arrStudents" (evAction)='openModal($event)'>
+        </app-student-list>
+        <app-modal id="modal" (evClose)='closeModal($event)' [modalInfo]="objModalInfo" *ngIf="blModalIsOpen" class="modal-background"
+            (evAction)="actionFromModal($event)"></app-modal>
+    </mat-card>
+</div>

@@ -1,3 +1,33 @@
-<p>
-  modal works!
-</p>
+<div id="modal-background" (click)="close()"></div>
+<div id="modal-container">
+  <mat-card class="modal">
+    <div class="modal-title">
+      <span>{{strModalTitle}}</span>
+      <span class="spacer"></span>
+      <img (click)="close()" src="../../../assets/icons/close.svg" alt="cerrar modal">
+    </div>
+    <div class="modal-body">
+      <form id="my-form" ngNativeValidate #myForm="ngForm" (ngSubmit)="submit()">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nombre" [(ngModel)]="objStudentCopy.strName" [disabled]="!blIsEditable" [value]="objStudent.strName"
+            name="name" required minlength="4" maxlength="20" type="text">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Código" [(ngModel)]="objStudentCopy.numCode" [disabled]="!blIsEditable" [value]="objStudent.numCode"
+            name="code" required type="number" maxlength="9">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Correo" [(ngModel)]="objStudentCopy.strMail" [disabled]="!blIsEditable" [value]="objStudent.strMail"
+            name="mail" required minlength="4" type="email">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Número" [(ngModel)]="objStudentCopy.numNumber" [disabled]="!blIsEditable"
+            [value]="objStudent.numNumber" name="number" maxlength="9" required minlength="4" type="number">
+        </mat-form-field>
+        <button mat-raised-button type="submit">{{strBtn}}</button>
+
+      </form>
+
+    </div>
+  </mat-card>
+</div>

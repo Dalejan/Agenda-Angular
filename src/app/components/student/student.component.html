@@ -1,0 +1,14 @@
+<!-- <td *ngFor="let col of columns; let i =index">
+  {{student_ele[i]}}
+</td> -->
+
+<td [appLimitText]="student.strName"> {{student.strName}}</td>
+<td> {{student.numCode}}</td>
+<td> {{student.strMail}}</td>
+
+<td class="actions">
+  <div *ngFor="let action of arrActions" (click)="clicked(action)">
+    <img class="action-icon" [appActionIcon]="action" alt="action" />
+  </div>
+
+</td>

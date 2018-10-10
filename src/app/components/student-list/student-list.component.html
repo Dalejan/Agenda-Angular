@@ -1,0 +1,12 @@
+<div id="table">
+  <div id="table-head">
+    <div class="th-item" *ngFor="let col of arrColumns">
+      <span>{{col}}</span>
+    </div>
+  </div>
+  <div id="table-body">
+    <div class="tr-item" *ngFor="let student of arrStudents; let i = index" app-student [student]="student" [index]="i"
+      (evAction)='action($event)'>
+    </div>
+  </div>
+</div>

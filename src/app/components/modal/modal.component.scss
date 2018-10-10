@@ -1,0 +1,48 @@
+@import "../../../mat.scss";
+
+#modal-background {
+  background-color: #80808082;
+  cursor: pointer;
+  width: 100vw;
+  height: 100vh;
+}
+
+#modal-container {
+  position: fixed;
+  .modal {
+    cursor: initial;
+    display: flex;
+    flex-direction: column;
+    min-width: 20rem;
+
+    .modal-title {
+      margin-bottom: 20px;
+      padding: 1rem;
+      color: white;
+      background-color: $primary;
+      font-weight: 700;
+      border-radius: 4px 4px 0px 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img:hover {
+        cursor: pointer;
+      }
+    }
+    .modal-body {
+      #my-form {
+        display: flex;
+        flex-direction: column;
+      }
+      button {
+        color: white;
+        background-color: $accent;
+        float: right;
+      }
+    }
+  }
+}
+
+.field-full-width {
+  width: 100%;
+}
