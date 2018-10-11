@@ -21,13 +21,16 @@ mat-toolbar {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
+  mat-card {
+    width: 40rem;
+  }
   #modal {
     opacity: 0;
-    transition: all 2000ms ease-in-out;
+    transition: opacity 2000ms ease-in-out;
   }
   #modal[class*="active"] {
     opacity: 1;
-    transition: all 400ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
   }
 }
 .modal-background {
